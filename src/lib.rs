@@ -16,4 +16,3 @@ pub mod instance;
 pub mod locks;
 mod state;
 pub mod synchronizer;
-mod kani_verification;

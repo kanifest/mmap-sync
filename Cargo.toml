@@ -19,6 +19,7 @@ memmap2 = "0.9.4"
 rkyv = { version = "0.7.40", features = ["validation", "strict"] }
 thiserror = "1.0.30"
 wyhash = "0.5.0"
+kani-verifier = { version = "0.56.0", optional = true }
 
 [target.'cfg(unix)'.dependencies]
 libc = "0.2.0"
@@ -28,11 +29,9 @@ criterion = { version = "0.5.1", features = ["html_reports"] }
 pprof = { version = "0.13.0", features = ["flamegraph", "protobuf-codec", "criterion"] }
 proptest = "1.0.0"
 rand = "0.8.5"
-kani-verifier = "0.36.0"
 
-[[bench]]
-name = "synchronizer"
-harness = false
+[features]
+kani = ["kani-verifier"] # Enable Kani with the "kani-verifier" dependency
 
 [package.metadata.docs.rs]
 all-features = true
